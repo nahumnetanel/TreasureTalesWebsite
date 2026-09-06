@@ -106,8 +106,8 @@ export default function EnglishHome() {
           <p>The entire adventure in one simple, clear experience.</p>
         </div>
         <div className="screens-track">
-          {screenshots.map((shot, index) => (
-            <figure className={index === 2 ? 'screen-card featured' : 'screen-card'} key={shot.src}>
+          {screenshots.map((shot) => (
+            <figure className="screen-card" key={shot.src}>
               <img src={shot.src} alt={shot.alt} />
             </figure>
           ))}
