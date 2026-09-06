@@ -3,7 +3,7 @@ import { ArrowRight, Camera, Mail, MapPin, ShieldAlert } from 'lucide-react';
 export default function SupportPage() {
   return (
     <main className="legal-page">
-      <a className="back-link" href="/"><ArrowRight size={18} /> חזרה לדף הבית</a>
+      <div className="legal-topbar"><a className="back-link" href="/"><ArrowRight size={18} /> חזרה לדף הבית</a><a className="language-link" href="/en/support" lang="en">English</a></div>
       <section className="legal-hero">
         <p className="eyebrow">TreasureTales Support</p>
         <h1>אנחנו כאן כדי לעזור</h1>

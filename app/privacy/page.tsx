@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 export default function PrivacyPage() {
   return (
     <main className="legal-page privacy-page">
-      <a className="back-link" href="/"><ArrowRight size={18} /> חזרה לדף הבית</a>
+      <div className="legal-topbar"><a className="back-link" href="/"><ArrowRight size={18} /> חזרה לדף הבית</a><a className="language-link" href="/en/privacy" lang="en">English</a></div>
       <section className="legal-hero">
         <p className="eyebrow">Privacy Policy</p>
         <h1>מדיניות פרטיות</h1>

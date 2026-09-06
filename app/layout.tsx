@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://treasuretales-adventure.nifty-shrew-7206.chatgpt.site'),
+  metadataBase: new URL('https://treasuretales-adventure.nahumneta.chatgpt.site'),
   title: 'TreasureTales — כל מקום מסתיר סיפור',
   description: 'ציד אוצרות אינטראקטיבי שמשלב מפה, חידות ודמויות במציאות רבודה.',
+  alternates: { canonical: '/', languages: { 'he-IL': '/', 'en-US': '/en' } },
   openGraph: {
     title: 'TreasureTales — כל מקום מסתיר סיפור',
     description: 'ציד אוצרות אינטראקטיבי שמשלב מפה, חידות ודמויות במציאות רבודה.',

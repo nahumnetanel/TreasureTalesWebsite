@@ -36,6 +36,7 @@ export default function Home() {
           <a href="#how">איך זה עובד</a>
           <a href="#screens">הצצה לאפליקציה</a>
           <a href="/support">תמיכה</a>
+          <a className="language-link" href="/en" lang="en">English</a>
         </nav>
         <a className="nav-cta" href="#download">בקרוב ב־App Store</a>
       </header>
@@ -128,7 +129,7 @@ export default function Home() {
       <footer>
         <div className="brand footer-brand"><span className="brand-mark"><img src="/chest.png" alt="" /></span><span>TreasureTales</span></div>
         <p>כל מקום מסתיר סיפור. הגיע הזמן למצוא אותו.</p>
-        <div className="footer-links"><a href="/support">תמיכה</a><a href="/privacy">מדיניות פרטיות</a></div>
+        <div className="footer-links"><a href="/support">תמיכה</a><a href="/privacy">מדיניות פרטיות</a><a href="/en" lang="en">English</a></div>
         <small>© 2026 TreasureTales. כל הזכויות שמורות.</small>
       </footer>
     </main>
