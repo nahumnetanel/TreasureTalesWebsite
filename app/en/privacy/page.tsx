@@ -25,7 +25,7 @@ export default function EnglishPrivacyPage() {
         <h2>Children and safety</h2>
         <p>Children should use the app with the supervision of a parent or guardian. When playing outdoors, always remain aware of traffic and your surroundings.</p>
         <h2>Your choices</h2>
-        <p>You can manage camera, location and photo permissions in your device settings. You may also request information, correction or deletion through the support channel that will be published on this website.</p>
+        <p>You can manage camera, location and photo permissions in your device settings. You may also request information, correction or deletion by emailing <a className="support-email" href="mailto:netanelvision@gmail.com">netanelvision@gmail.com</a>.</p>
         <h2>Policy updates</h2>
         <p>We may update this policy as the service changes. The latest update date will appear at the bottom of this page.</p>
       </section>
