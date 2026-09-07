@@ -1,6 +1,6 @@
 # TreasureTales Website
 
-The bilingual marketing website for TreasureTales, including Hebrew and English landing, support, and privacy pages.
+The bilingual static marketing website for TreasureTales, including Hebrew and English landing, support, and privacy pages. The repository root contains the plain HTML/CSS version published by GitHub Pages; no application server or database is required.
 
 ## Pages
 
@@ -9,15 +9,10 @@ The bilingual marketing website for TreasureTales, including Hebrew and English 
 - `/support` and `/en/support` — Support
 - `/privacy` and `/en/privacy` — Privacy policy
 
-## Local development
+## Static website
 
-```bash
-npm install
-npm run dev
-```
+Open `index.html` or serve the repository root with any static file server.
 
-## Production build
+## GitHub Pages
 
-```bash
-npm run build
-```
+Publish from the `main` branch and the repository root (`/`).
