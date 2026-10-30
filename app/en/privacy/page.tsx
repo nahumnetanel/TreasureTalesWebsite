@@ -24,7 +24,7 @@ export default function EnglishPrivacyPage() {
         <p>We take reasonable measures to protect information and retain it only for as long as needed to operate the service or meet legal obligations.</p>
         <h2>Children and safety</h2>
         <p>Children should use the app with the supervision of a parent or guardian. When playing outdoors, always remain aware of traffic and your surroundings.</p>
-        <h2>Your choices</h2>
+        <h2>Your choices</h2><p>To delete your account, open Profile → Settings → Delete account in the app and confirm. This deletes your account, favorites, history, ratings, comments and hunts you created from the application database. Your hunts will no longer be available to other players. Apple accounts require confirmation with the same Apple account. No support email is required to initiate account deletion.</p>
         <p>You can manage camera, location and photo permissions in your device settings. You may also request information, correction or deletion by emailing <a className="support-email" href="mailto:netanelvision@gmail.com">netanelvision@gmail.com</a>.</p>
         <h2>Policy updates</h2>
         <p>We may update this policy as the service changes. The latest update date will appear at the bottom of this page.</p>
