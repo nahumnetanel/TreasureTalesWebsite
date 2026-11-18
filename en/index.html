@@ -1,7 +1,61 @@
-<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TreasureTales — Every place hides a story</title><meta name="description" content="Interactive treasure hunts combining maps, puzzles and augmented reality characters."><link rel="icon" href="../public/favicon.svg"><link rel="stylesheet" href="../styles.css"></head><body>
-<header class="header"><a class="brand" href="#top"><img src="../public/chest.png" alt=""><span>TreasureTales</span></a><nav class="nav"><a href="#how">How it works</a><a href="#screens">Inside the app</a><a href="./support/">Support</a><a class="lang" href="../" lang="he">עברית</a></nav><a class="cta" href="#download">Coming to the App Store</a></header>
-<main><section class="hero" id="top"><div class="hero-copy"><p class="eyebrow">✦ Every place hides a story</p><h1>The world around you<br><span>becomes an adventure.</span></h1><p class="lead">An interactive treasure hunt combining maps, puzzles and augmented reality characters — for families, friends and everyone ready to explore.</p><div class="actions" id="download"><span class="store">Coming to the App Store</span><a href="#how">See how it works →</a></div><p class="trust">✓ Designed around safety, privacy and family-friendly fun</p></div><div class="hero-art"><img src="../public/chest.png" alt="The TreasureTales treasure chest"></div></section>
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TreasureTales — Every place hides a story</title><meta name="description" content="Interactive treasure hunts combining maps, puzzles and augmented reality characters."><link rel="icon" href="../public/brand-chest.png"><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../public/adventure.css"><script src="../public/adventure-autoplay.js" defer></script></head><body class="treasure-home">
+<a class="adventure-skip" href="#top">Skip to content</a>
+<header class="header"><a class="brand" href="#top"><img src="../public/brand-chest.png" alt=""><span>TreasureTales</span></a><nav class="nav"><a href="#how">How it works</a><a href="#screens">Inside the app</a><a href="./support/">Support</a></nav><a class="lang" href="../" lang="he">עברית</a></header>
+<main><section class="hero family-hero" id="top" tabindex="-1"><div class="family-hero-media"><img src="../public/family-hunt.jpg" alt="A family discovering a wooden treasure chest on a forest trail" width="1440" height="960" fetchpriority="high"></div><div class="hero-copy"><p class="eyebrow">The treasure awaits</p><h1>Go on a <span>treasure hunt together.</span></h1><p class="lead">Maps, clues, and augmented reality bring the adventure to life for families, schools, and team-building days.</p><div class="actions" id="download"><a class="store" href="https://apps.apple.com/il/app/treasuretales/id6809154239">Download on the App Store</a><a class="android-test" href="https://play.google.com/apps/internaltest/4701109278122805153">Android</a><a href="#try-the-hunt">Try the treasure hunt</a></div><p class="trust">✓ Designed around safety, privacy and family-friendly fun</p></div></section>
+<section class="hunt-demo" id="try-the-hunt" aria-labelledby="hunt-demo-title">
+  <div class="hunt-demo-copy"><h2 id="hunt-demo-title">Can you find the treasure?</h2><p>Follow the trail on the old map and see what the X is hiding.</p></div>
+  <figure class="adventure">
+  <img class="adventure-map" src="../public/treasure-map.jpg" alt="" width="1440" height="960" />
+  <img class="adventure-forest" src="../public/enchanted-forest.jpg" alt="" width="1440" height="960" />
+  <svg class="adventure-route" viewBox="0 0 500 400" preserveAspectRatio="none" aria-hidden="true" fill="none">
+    <path class="trail" pathLength="100" d="M 73 304 C 84 219 194 313 205 242 S 132 146 220 134 S 320 251 385 124" stroke="#612819" stroke-width="5" stroke-linecap="round" />
+    <circle cx="73" cy="304" r="8" fill="#612819" stroke="#ecca8c" stroke-width="2" />
+    <path class="destination" d="M 370 109 L 402 137 M 402 108 L 370 138" stroke="#9e2a22" stroke-width="9" stroke-linecap="round" />
+  </svg>
+  <div class="hunt-story-panel" data-scene="riddle" hidden>
+    <div class="hunt-story-caption"><strong>First stop · The riddle</strong><p>What looks like a fox but can fly on leaf-shaped wings?</p></div>
+  </div>
+  <div class="hunt-story-panel" data-scene="fox" hidden>
+    <div class="hunt-creature hunt-creature--fox"><img src="../public/forest-creatures.png" alt="" width="768" height="512"></div>
+    <div class="hunt-story-caption"><strong>You found the winged fox!</strong><p>My clue: head to the forest clearing and look for big eyes and antlers.</p></div>
+  </div>
+  <div class="hunt-story-panel" data-scene="owl" hidden>
+    <div class="hunt-creature hunt-creature--owl"><img src="../public/forest-creatures.png" alt="" width="768" height="512"></div>
+    <div class="hunt-story-caption"><strong>You met the woodland owl!</strong><p>One last clue: look for the X by the roots of the largest tree. The treasure is waiting there.</p></div>
+  </div>
+  <div class="hunt-story-panel" data-scene="treasure" hidden>
+    <div class="hunt-story-caption"><strong>You found the treasure!</strong><p>You solved the clues and reached the chest.</p></div>
+  </div>
+  <div class="adventure-chest" aria-hidden="true">
+    <span class="chest-light"></span><span class="chest-interior"></span>
+    <span class="chest-lid"></span><span class="chest-front"></span>
+  </div>
+  <button class="hunt-play-toggle" type="button" hidden>
+    <span data-play-label>Pause the hunt</span><span data-pause-label hidden>Resume the hunt</span>
+  </button>
+</figure></section>
+<section class="hunt-audiences" id="adventures" aria-labelledby="adventures-title">
+  <h2 id="adventures-title">Find the right adventure</h2>
+  <div class="hunt-cards">
+    <article class="hunt-card">
+      <span class="hunt-emblem" aria-hidden="true">✦</span>
+      <h3>Families</h3>
+      <p>Explore a park or your neighborhood. Let the kids lead the way and solve each clue together.</p>
+    </article>
+    <article class="hunt-card">
+      <span class="hunt-emblem" aria-hidden="true">✎</span>
+      <h3>Schools</h3>
+      <p>Build a route in the schoolyard or on a field trip, with clues tied to a lesson and stops for group activities.</p>
+    </article>
+    <article class="hunt-card">
+      <span class="hunt-emblem" aria-hidden="true">⚑</span>
+      <h3>Team building</h3>
+      <p>Split into groups, share a join code, and give each team a trail of clues to solve together.</p>
+    </article>
+  </div>
+</section>
+
 <section class="section" id="how"><div class="heading"><p class="eyebrow">An adventure in three steps</p><h2>Easy to start. Fun to discover.</h2><p>Choose a hunt, solve the clues and discover what is waiting at the next stop.</p></div><div class="grid"><article class="card"><b>01</b><h3>Choose a hunt</h3><p>Find an adventure on the map or join a private hunt with a code.</p></article><article class="card"><b>02</b><h3>Solve as you go</h3><p>Visit each stop, read the clues and see the world around you differently.</p></article><article class="card"><b>03</b><h3>Discover the treasure</h3><p>Meet AR characters and complete the story all the way to the final reveal.</p></article></div></section>
-<section class="screens" id="screens"><div class="heading"><p class="eyebrow">Inside the app</p><h2>From the map to the treasure</h2><p>The entire adventure in one simple, clear experience.</p></div><div class="screen-row"><figure class="screen"><img src="../public/screens/TreasureTales_1.jpg" alt="Treasure hunt map"></figure><figure class="screen"><img src="../public/screens/TreasureTales_2.jpg" alt="Creating a hunt"></figure><figure class="screen"><img src="../public/screens/TreasureTales_3.jpg" alt="Solving a clue"></figure><figure class="screen"><img src="../public/screens/TreasureTales_4.jpg" alt="Augmented reality character"></figure><figure class="screen"><img src="../public/screens/TreasureTales_5.jpg" alt="Finding the treasure"></figure></div></section>
+<section class="screens" id="screens"><div class="heading"><p class="eyebrow">Inside the app</p><h2>From the map to the treasure</h2><p>The entire adventure in one simple, clear experience.</p></div><section class="screen-row" tabindex="0" aria-label="App screenshots"><figure class="screen"><img loading="lazy" src="../public/screens/TreasureTales_1.jpg" alt="Treasure hunt map"></figure><figure class="screen"><img loading="lazy" src="../public/screens/TreasureTales_2.jpg" alt="Creating a hunt"></figure><figure class="screen"><img loading="lazy" src="../public/screens/TreasureTales_3.jpg" alt="Solving a clue"></figure><figure class="screen"><img loading="lazy" src="../public/screens/TreasureTales_4.jpg" alt="Augmented reality character"></figure><figure class="screen"><img loading="lazy" src="../public/screens/TreasureTales_5.jpg" alt="Finding the treasure"></figure></section></section>
 <section class="section"><div class="heading"><p class="eyebrow">More than a game</p><h2>You decide where the story goes</h2></div><div class="grid feature-grid"><article class="card"><h3>Adventures nearby</h3><p>Discover treasure hunts on the map and head out.</p></article><article class="card"><h3>Clues and puzzles</h3><p>Every stop reveals a new clue and brings you closer to the treasure.</p></article><article class="card"><h3>Characters in AR</h3><p>Meet 3D characters in the real world through your camera.</p></article><article class="card"><h3>Create and share</h3><p>Build your own hunt and invite family and friends with a code.</p></article></div></section><section class="banner"><p class="eyebrow">Your story. Your route.</p><h2>Create an adventure that cannot be found anywhere else.</h2><p>Choose locations, add clues and characters, then send an invitation code to anyone you want to join.</p></section></main>
-<footer class="footer"><div class="brand"><img src="../public/chest.png" alt=""><span>TreasureTales</span></div><p>Every place hides a story. It is time to find it.</p><div class="footer-links"><a href="./support/">Support</a><a href="./privacy/">Privacy Policy</a><a href="../" lang="he">עברית</a></div><small>© 2026 TreasureTales. All rights reserved.</small></footer></body></html>
+<footer class="footer"><div class="brand"><img src="../public/brand-chest.png" alt=""><span>TreasureTales</span></div><p>Every place hides a story. It is time to find it.</p><div class="footer-links"><a href="./support/">Support</a><a href="./privacy/">Privacy Policy</a><a href="../" lang="he">עברית</a></div><small>© 2026 TreasureTales. All rights reserved.</small></footer></body></html>

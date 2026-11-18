@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://treasuretales-adventure.nahumneta.chatgpt.site'),
   title: 'TreasureTales — כל מקום מסתיר סיפור',
   description: 'ציד אוצרות אינטראקטיבי שמשלב מפה, חידות ודמויות במציאות רבודה.',
+  icons: { icon: { url: '/brand-chest.png', type: 'image/png' } },
   alternates: { canonical: '/', languages: { 'he-IL': '/', 'en-US': '/en' } },
   openGraph: {
     title: 'TreasureTales — כל מקום מסתיר סיפור',

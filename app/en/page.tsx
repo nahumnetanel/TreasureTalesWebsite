@@ -1,7 +1,9 @@
+/* oxlint-disable next/no-html-link-for-pages -- Load localized pages directly, as on the static site. */
+import Image from 'next/image';
+import { Adventure } from '../adventure';
 import {
   ArrowRight,
   Camera,
-  Compass,
   MapPinned,
   Puzzle,
   ShieldCheck,
@@ -38,45 +40,59 @@ const features = [
 
 export default function EnglishHome() {
   return (
-    <main dir="ltr" lang="en">
+    <main className="treasure-home" dir="ltr" lang="en">
+      <a className="adventure-skip" href="#top">Skip to content</a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="TreasureTales — top of page">
-          <span className="brand-mark"><img src="/chest.png" alt="" /></span>
+          <span className="brand-mark"><Image src="/brand-chest.png" alt="" width={96} height={96} unoptimized /></span>
           <span>TreasureTales</span>
         </a>
         <nav aria-label="Main navigation">
           <a href="#how">How it works</a>
           <a href="#screens">Inside the app</a>
           <a href="/en/support">Support</a>
-          <a className="language-link" href="/" lang="he">עברית</a>
         </nav>
-        <a className="nav-cta" href="#download">Coming to the App Store</a>
+        <a className="language-link" href="/" lang="he">עברית</a>
       </header>
 
-      <section className="hero" id="top">
+      <section className="hero family-hero" id="top" tabIndex={-1}>
+        <div className="family-hero-media"><Image src="/family-hunt.jpg" alt="A family discovering a wooden treasure chest on a forest trail" width={1440} height={960} unoptimized loading="eager" fetchPriority="high" /></div>
         <div className="hero-copy">
-          <p className="eyebrow"><Sparkles size={18} /> Every place hides a story</p>
-          <h1>The world around you<br /><span>becomes an adventure.</span></h1>
-          <p className="hero-lead">
-            An interactive treasure hunt combining maps, puzzles and augmented reality characters —
-            for families, friends and everyone ready to explore.
-          </p>
+          <p className="eyebrow"><Sparkles size={18} /> The treasure awaits</p>
+          <h1>Go on a <span>treasure hunt together.</span></h1>
+          <p className="hero-lead">Maps, clues, and augmented reality bring the adventure to life for families, schools, and team-building days.</p>
           <div className="hero-actions" id="download">
-            <span className="store-button" aria-label="TreasureTales is coming soon to the App Store">
-              <span className="apple">●</span>
-              <span><small>Coming soon to the</small>App Store</span>
-            </span>
-            <a className="text-link" href="#how">See how it works <ArrowRight size={19} /></a>
+            <a className="store-button" href="https://apps.apple.com/il/app/treasuretales/id6809154239">Download on the App Store</a>
+            <a className="android-test" href="https://play.google.com/apps/internaltest/4701109278122805153">Android</a>
+            <a className="text-link" href="#try-the-hunt">Try the treasure hunt <ArrowRight size={19} /></a>
           </div>
           <div className="trust-line"><ShieldCheck size={19} /> Designed around safety, privacy and family-friendly fun</div>
         </div>
-        <div className="hero-art" aria-label="Glowing treasure chest">
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="spark spark-one">✦</div>
-          <div className="spark spark-two">✧</div>
-          <img src="/chest.png" alt="The TreasureTales treasure chest" />
-          <div className="map-chip"><Compass size={20} /> Your next adventure is close by</div>
+      </section>
+
+      <section className="hunt-demo" id="try-the-hunt" aria-labelledby="hunt-demo-title">
+        <div className="hunt-demo-copy"><h2 id="hunt-demo-title">Can you find the treasure?</h2><p>Follow the trail on the old map and see what the X is hiding.</p></div>
+        <Adventure language="en" />
+      </section>
+
+      <section className="hunt-audiences" id="adventures" aria-labelledby="adventures-title">
+        <h2 id="adventures-title">Find the right adventure</h2>
+        <div className="hunt-cards">
+          <article className="hunt-card">
+            <span className="hunt-emblem" aria-hidden="true">✦</span>
+            <h3>Families</h3>
+            <p>Explore a park or your neighborhood. Let the kids lead the way and solve each clue together.</p>
+          </article>
+          <article className="hunt-card">
+            <span className="hunt-emblem" aria-hidden="true">✎</span>
+            <h3>Schools</h3>
+            <p>Build a route in the schoolyard or on a field trip, with clues tied to a lesson and stops for group activities.</p>
+          </article>
+          <article className="hunt-card">
+            <span className="hunt-emblem" aria-hidden="true">⚑</span>
+            <h3>Team building</h3>
+            <p>Split into groups, share a join code, and give each team a trail of clues to solve together.</p>
+          </article>
         </div>
       </section>
 
@@ -105,13 +121,14 @@ export default function EnglishHome() {
           <h2>From the map to the treasure</h2>
           <p>The entire adventure in one simple, clear experience.</p>
         </div>
-        <div className="screens-track">
+        {/* oxlint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Make the overflow area keyboard-scrollable. */}
+        <section className="screens-track" tabIndex={0} aria-label="App screenshots">
           {screenshots.map((shot) => (
             <figure className="screen-card" key={shot.src}>
-              <img src={shot.src} alt={shot.alt} />
+              <Image src={shot.src} alt={shot.alt} width={1284} height={2778} sizes="(max-width: 900px) 220px, 255px" />
             </figure>
           ))}
-        </div>
+        </section>
       </section>
 
       <section className="features-section">
@@ -139,7 +156,7 @@ export default function EnglishHome() {
       </section>
 
       <footer>
-        <div className="brand footer-brand"><span className="brand-mark"><img src="/chest.png" alt="" /></span><span>TreasureTales</span></div>
+        <div className="brand footer-brand"><span className="brand-mark"><Image src="/brand-chest.png" alt="" width={96} height={96} unoptimized /></span><span>TreasureTales</span></div>
         <p>Every place hides a story. It is time to find it.</p>
         <div className="footer-links"><a href="/en/support">Support</a><a href="/en/privacy">Privacy Policy</a><a href="/" lang="he">עברית</a></div>
         <small>© 2026 TreasureTales. All rights reserved.</small>

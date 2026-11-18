@@ -1,7 +1,9 @@
+/* oxlint-disable next/no-html-link-for-pages -- Load localized pages directly, as on the static site. */
+import Image from 'next/image';
+import { Adventure } from './adventure';
 import {
   ArrowLeft,
   Camera,
-  Compass,
   MapPinned,
   Puzzle,
   ShieldCheck,
@@ -26,45 +28,59 @@ const features = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="treasure-home">
+      <a className="adventure-skip" href="#top">דילוג לתוכן</a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="TreasureTales — ראש הדף">
-          <span className="brand-mark"><img src="/chest.png" alt="" /></span>
+          <span className="brand-mark"><Image src="/brand-chest.png" alt="" width={96} height={96} unoptimized /></span>
           <span>TreasureTales</span>
         </a>
         <nav aria-label="ניווט ראשי">
           <a href="#how">איך זה עובד</a>
           <a href="#screens">הצצה לאפליקציה</a>
           <a href="/support">תמיכה</a>
-          <a className="language-link" href="/en" lang="en">English</a>
         </nav>
-        <a className="nav-cta" href="#download">בקרוב ב־App Store</a>
+        <a className="language-link" href="/en" lang="en">English</a>
       </header>
 
-      <section className="hero" id="top">
+      <section className="hero family-hero" id="top" tabIndex={-1}>
+        <div className="family-hero-media"><Image src="/family-hunt.jpg" alt="משפחה מגלה תיבת אוצר מעץ בשביל ביער" width={1440} height={960} unoptimized loading="eager" fetchPriority="high" /></div>
         <div className="hero-copy">
-          <p className="eyebrow"><Sparkles size={18} /> כל מקום מסתיר סיפור</p>
-          <h1>העולם סביבכם<br /><span>הופך להרפתקה.</span></h1>
-          <p className="hero-lead">
-            ציד אוצרות אינטראקטיבי שמשלב מפה, חידות ודמויות במציאות רבודה —
-            למשפחה, לחברים ולכל מי שמוכן לצאת למסע.
-          </p>
+          <p className="eyebrow"><Sparkles size={18} /> המטמון מחכה לכם</p>
+          <h1>יוצאים יחד <span>לחיפוש מטמון.</span></h1>
+          <p className="hero-lead">מפה, חידות ודמויות במציאות רבודה הופכות כל יציאה להרפתקה למשפחות, לבתי ספר ולימי גיבוש.</p>
           <div className="hero-actions" id="download">
-            <span className="store-button" aria-label="TreasureTales תושק בקרוב ב-App Store">
-              <span className="apple">●</span>
-              <span><small>בקרוב ב־</small>App Store</span>
-            </span>
-            <a className="text-link" href="#how">גלו איך זה עובד <ArrowLeft size={19} /></a>
+            <a className="store-button" href="https://apps.apple.com/il/app/treasuretales/id6809154239"><span>הורדה מ־<bdi>App Store</bdi></span></a>
+            <a className="android-test" href="https://play.google.com/apps/internaltest/4701109278122805153">אנדרואיד</a>
+            <a className="text-link" href="#try-the-hunt">נסו את חיפוש המטמון <ArrowLeft size={19} /></a>
           </div>
           <div className="trust-line"><ShieldCheck size={19} /> נבנה עם בטיחות, פרטיות וחוויה משפחתית במרכז</div>
         </div>
-        <div className="hero-art" aria-label="תיבת אוצר זוהרת">
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="spark spark-one">✦</div>
-          <div className="spark spark-two">✧</div>
-          <img src="/chest.png" alt="תיבת האוצר של TreasureTales" />
-          <div className="map-chip"><Compass size={20} /> המסע הבא מחכה לידכם</div>
+      </section>
+
+      <section className="hunt-demo" id="try-the-hunt" aria-labelledby="hunt-demo-title">
+        <div className="hunt-demo-copy"><h2 id="hunt-demo-title">תצליחו למצוא את המטמון?</h2><p>עקבו אחרי המסלול במפה העתיקה וגלו מה מסתתר מאחורי ה־X.</p></div>
+        <Adventure language="he" />
+      </section>
+
+      <section className="hunt-audiences" id="adventures" aria-labelledby="adventures-title">
+        <h2 id="adventures-title">איזה מסע מתאים לכם?</h2>
+        <div className="hunt-cards">
+          <article className="hunt-card">
+            <span className="hunt-emblem" aria-hidden="true">✦</span>
+            <h3>משפחות</h3>
+            <p>צאו למסע בפארק או בשכונה. הילדים מובילים בין התחנות, וכולם משתתפים בפתרון החידות.</p>
+          </article>
+          <article className="hunt-card">
+            <span className="hunt-emblem" aria-hidden="true">✎</span>
+            <h3>בתי ספר</h3>
+            <p>בנו מסלול בחצר או בטיול כיתתי, עם חידות שמתאימות לנושא הלימוד ותחנות לפעילות בקבוצות.</p>
+          </article>
+          <article className="hunt-card">
+            <span className="hunt-emblem" aria-hidden="true">⚑</span>
+            <h3>ימי גיבוש</h3>
+            <p>חלקו את המשתתפים לקבוצות, שתפו קוד למסלול ותנו לכל צוות לפתור את הרמזים יחד עד האוצר.</p>
+          </article>
         </div>
       </section>
 
@@ -93,13 +109,14 @@ export default function Home() {
           <h2>מהמפה ועד האוצר</h2>
           <p>כל המסע, בעיצוב אחד פשוט וברור.</p>
         </div>
-        <div className="screens-track">
+        {/* oxlint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Make the overflow area keyboard-scrollable. */}
+        <section className="screens-track" tabIndex={0} aria-label="צילומי מסך מהאפליקציה">
           {screenshots.map((shot) => (
             <figure className="screen-card" key={shot.src}>
-              <img src={shot.src} alt={shot.alt} />
+              <Image src={shot.src} alt={shot.alt} width={1284} height={2778} sizes="(max-width: 900px) 220px, 255px" />
             </figure>
           ))}
-        </div>
+        </section>
       </section>
 
       <section className="features-section">
@@ -127,7 +144,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="brand footer-brand"><span className="brand-mark"><img src="/chest.png" alt="" /></span><span>TreasureTales</span></div>
+        <div className="brand footer-brand"><span className="brand-mark"><Image src="/brand-chest.png" alt="" width={96} height={96} unoptimized /></span><span>TreasureTales</span></div>
         <p>כל מקום מסתיר סיפור. הגיע הזמן למצוא אותו.</p>
         <div className="footer-links"><a href="/support">תמיכה</a><a href="/privacy">מדיניות פרטיות</a><a href="/en" lang="en">English</a></div>
         <small>© 2026 TreasureTales. כל הזכויות שמורות.</small>
